@@ -2,6 +2,8 @@ package principios.responsabilidade;
 
 public class ContaBancaria {
 	
+	//metodos simples e funçoes condizentes com o objeto
+	//tudo o que eu preciso para o método está aqui?
 	private String descricao;
 	
 	private double saldo = 8000;
