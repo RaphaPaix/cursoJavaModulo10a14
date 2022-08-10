@@ -1,0 +1,13 @@
+try{
+	código de regra de negócio - processos do sistema
+	Por ex: realização de uma venda
+}catch(Exception e){
+	e.printStackTrace(); - imprime a pilha de erro no console
+}
+
+Dentro do try fica o código que pode ocorrer uma exceçao e catch é o ponto de caída
+do código após a interrupção.
+
+A classe EXCEPTION tem todas as informações do erro
+
+TODA exceção interrompe um bloco e um fluxo de processo.

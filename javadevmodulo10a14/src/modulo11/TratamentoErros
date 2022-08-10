@@ -31,4 +31,8 @@ ClassCastException                                ---> Exception
 
                                                        Error            
                                                        
-                                                       
+A leitura da exceção como de baixo para cima
+Ultima linha identifica a classe, o método e a linha
+Depois (subindo a linha), métodos e classes internas do código (ou incompatibilidade do java, problema externo)
+Método e linha exatos onde ocorreu o erro DURANTE a execução
+Em seguida, identificação e descrição exata do erro

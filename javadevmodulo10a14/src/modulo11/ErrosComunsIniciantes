@@ -1,0 +1,11 @@
+1.NullPointerException: existe uma variável ou referência nula
+2.NumberFormatException: tentando converter a String em um número mas a String está vazia
+3.FileNotFoundException: tentando carregar um arquivo que não foi encontrado no caminho informado
+4.ClassCastException: tentando converter um objeto B para A sendo que não são do mesmo tipo ou não tem relação entre si
+5.ClassNotFoundExceptio: tentando carregar um classe que não foi encontrada
+
+OBSERVAÇÃO: existem finitas exceções
+
+lembre que podem ocorrer erros no código mas também erros na digitação do usuário
+
+90% são erros do programador
