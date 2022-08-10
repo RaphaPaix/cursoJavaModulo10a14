@@ -11,3 +11,4 @@ public interface PermitirAcesso {
 	//método mais robusto, contrato mais forte
 	public boolean autenticar(String login, String senha); 
 }
+//testanto git
