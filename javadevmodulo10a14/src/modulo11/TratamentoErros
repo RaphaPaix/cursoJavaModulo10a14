@@ -1,0 +1,34 @@
+Erros de exceçoes são erros que nao podem ser previstos pela IDE
+Exemplos de exceçoes são: a lógica, uma conversão, um acesso, etc
+TRATAMENTO DE EXCEÇÕES É OBRIGATÓRIO PARA O SISTEMA CONTINUAR FUNCIONANDO
+Serve para que o sistema não caia
+
+RESPONSABILIDADE DO PROGRAMADOR
+FATORES INTERNOS: (problema no código)
+-tentar manipular um objeto com valor nulo
+-dividr um numero por zero
+-manipular um tipo de dado como se fosse outro
+-tentar utilziar um  método ou classe não existente
+
+O PROHGRAMADOR NÃO TEM CONTROLE SOBRE TAIS EVENTOS
+FATORES EXTERNOS: 
+-tentar abrir um arquivo que não existe
+-tentar fazer consulta a um banco de dados remoto não disponível
+-tentar escrever algo em um arquivo sobre o qual não tem permissão de escrita
+-tentar conectar em um servidor inexistente ou fora de serviço
+
+erro na compilaçao: ocorre antes da execuçao e impede a iniciação do sistema
+
+erro runtime: erro durante a execução que impede uma rotina do sistema
+
+Arquitetura:
+
+NullPointerException
+ArrayIndexOutBoundException ---> RunTimeException
+ClassCastException                                ---> Exception
+
+      FileNotFoundException ---> IOException                     ---> Throwable
+
+                                                       Error            
+                                                       
+                                                       
