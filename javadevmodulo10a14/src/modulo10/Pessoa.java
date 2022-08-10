@@ -1,6 +1,6 @@
 package modulo10;
 
-public class Pessoa {
+public abstract class Pessoa { //proíbe instanciar o objeto pessoa (torna uma classe genérica)
 	
 	protected String nome; //protected autoriza a utilizaçao da variavel nas subclasses
 	protected int idade;
@@ -9,7 +9,12 @@ public class Pessoa {
 	protected String numeroCpf;
 	protected String nomeMae;
 	protected String nomePai;
-	protected String getNome() {
+	
+	//metodo abstract 
+	//fica na classe pai e é obrigatório para as classes filhas
+	public abstract double salario();
+	
+	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {

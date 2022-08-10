@@ -160,4 +160,9 @@ public class Aluno extends Pessoa{
 			return false;
 		return true;
 	}
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
