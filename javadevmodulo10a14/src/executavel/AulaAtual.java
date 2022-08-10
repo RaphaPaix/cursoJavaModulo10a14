@@ -1,11 +1,15 @@
 package executavel;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
 import constantes.StatusAluno;
+import excecoes.ExcecaoProcessarNota;
 //importando esta classe aluno e disciplina para diferenciar da outra
 import modulo10.*;
 
@@ -13,6 +17,19 @@ public class AulaAtual {
 	public static void main(String[] args) {
 		//simulando erro na lista Aluno para utilizar try-catch
 		try {
+			//usando try-catch com classe Exception personalizada
+			/*
+			try {
+				File file = new File("c://lines.txt");
+				Scanner scanner = new Scanner(file);
+			}catch(FileNotFoundException e) {
+				throw new ExcecaoProcessarNota(e.getMessage());
+			}
+			*/
+			
+			//usando o método e o throw
+			lerArquivo();
+			
 			//login e senha para acessar
 			String login = JOptionPane.showInputDialog("Informe o login");
 			String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -230,7 +247,9 @@ public class AulaAtual {
 			}else {
 				JOptionPane.showMessageDialog(null, "Login recusado, tente novamente.");
 			}
-		}catch (Exception e) {
+		}catch (ExcecaoProcessarNota e) { //posso especificar o erro que quero capturar
+			//exemplo: catch (NullPointException)
+			//posso fazer vários catchs diferentes (na estrutura de ifs)
 			
 			//objeto ja existente no java
 			StringBuilder saida = new StringBuilder();
@@ -239,18 +258,50 @@ public class AulaAtual {
 			e.printStackTrace();
 			
 			//mensagem do erro ou causa
-			System.out.println(" Mensagem: "+e.getMessage());
+			//System.out.println(" Mensagem: "+e.getMessage());
 			
 			//array com todas as informaçoes
+			
 			for(int i=0;i<e.getStackTrace().length;i++) {
-				saida.append("\n Classe de erro: "+e.getStackTrace()[i].getClassName()); //pode se costumizar
-				saida.append("\n Método de erro: "+e.getStackTrace()[i].getMethodName());
-				saida.append("\n Linha de erro: "+e.getStackTrace()[i].getLineNumber());
-				saida.append("\n Class: "+e.getClass().getName());
+				saida.append("\n Classe do erro customizado: "+e.getStackTrace()[i].getClassName()); //pode se costumizar
+				saida.append("\n Método do erro customizado: "+e.getStackTrace()[i].getMethodName());
+				saida.append("\n Linha do erro customizado: "+e.getStackTrace()[i].getLineNumber());
+				//saida.append("\n Class: "+e.getClass().getName());
 			}
 			
 			JOptionPane.showMessageDialog(null, "Erro no processamento"+saida.toString());
 			
 		}
+		/*catch(FileNotFoundException e) {
+			for(int i=0;i<e.getStackTrace().length;i++) {
+				StringBuilder saida = new StringBuilder();
+				saida.append("\n Classe do erro customizado2: "+e.getStackTrace()[i].getClassName()); //pode se costumizar
+				saida.append("\n Método do erro customizado2: "+e.getStackTrace()[i].getMethodName());
+				saida.append("\n Linha do erro customizado2: "+e.getStackTrace()[i].getLineNumber());
+				//saida.append("\n Class: "+e.getClass().getName());
+			}
+		}*/
+		//bloco finally - sempre é executado, contendo erro ou não
+		//sempre é usado quando se precisa executar um processo, acontecendo erro ou nao
+		finally {
+			JOptionPane.showMessageDialog(null, "Obrigado por aprender JAVA comigo");
+		}
 	}
+	//utilizando a exceçao personalizada e jogando para cima
+	public static void lerArquivo() throws ExcecaoProcessarNota {
+		try {
+			File file = new File("c://lines.txt");
+			Scanner scanner = new Scanner(file);
+		}catch(FileNotFoundException e) {
+			throw new ExcecaoProcessarNota(e.getMessage());
+		}
+	}
+	
+	//throws exception sem customização:
+	/* o meu ta com mau funcionamento
+	public static void lerArquivo2() throws FileNotFoundException {
+			File file = new File("c://lines.txt");
+			Scanner scanner = new Scanner(file);
+	}
+	*/
 }

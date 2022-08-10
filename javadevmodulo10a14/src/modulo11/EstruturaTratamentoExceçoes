@@ -11,3 +11,5 @@ do código após a interrupção.
 A classe EXCEPTION tem todas as informações do erro
 
 TODA exceção interrompe um bloco e um fluxo de processo.
+
+Capturando exceçao não tratada: classe Exception - calcula as exceçoes que nao prevemos
