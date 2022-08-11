@@ -1,0 +1,11 @@
+ATALHOS DO TECLADO PARA O DEBUG DO CÓDIGO
+
+1. F5 - entra nos métodos
+2. F6 - segue linha a linha
+3. F7 - sai de dentro do método atual
+4. F8 - segue para o próximo ponto de parada (breakpoint)
+5. CONTROL+SHIFT+I - mostra o valor da expressão ou da variável
+
+clica duas vezes na linha para marcar um breakpoint
+
+observação: os métodos sempre acontecem de dentro pra fora
