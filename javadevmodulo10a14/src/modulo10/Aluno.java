@@ -23,7 +23,7 @@ public class Aluno extends Pessoa{
 	public double getMediaNota() {
 		double somaDasNotas=0.0;
 		for( Disciplina disciplina : disciplinas) {
-			somaDasNotas += disciplina.getNota();
+			somaDasNotas += disciplina.getMediaDisciplina();
 		}
 		return somaDasNotas / disciplinas.size();
 	}
@@ -123,11 +123,8 @@ public class Aluno extends Pessoa{
 	public void setSerieMatriculado(String serieMatriculado) {
 		this.serieMatriculado = serieMatriculado;
 	}
-	//metodo toString
-	@Override
-	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", numeroCpf=" + numeroCpf + "]";
-	}
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -136,6 +133,12 @@ public class Aluno extends Pessoa{
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		result = prime * result + ((numeroCpf == null) ? 0 : numeroCpf.hashCode());
 		return result;
+	}
+	//metodo toString
+	@Override
+	public String toString() {
+		return "Aluno [dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+				+ serieMatriculado + ", disciplinas=" + disciplinas + "]";
 	}
 	@Override
 	public boolean equals(Object obj) {
